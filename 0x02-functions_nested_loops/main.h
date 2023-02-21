@@ -1,11 +1,2 @@
-#include <unistd.h>
+int _putchar(char c);
 
-/**
- * prints putchar
- * Returns 0
-*/
-
-int _putchar(char c)
-{
-	return (0);
-}
