@@ -10,19 +10,18 @@
 
 void print_most_numbers(void)
 {
-	int x = 0;
+	int c;
 
-	for (x = '0'; x <= '9'; x++)
+	for (c = 48; c < 58; c++)
 	{
-		if (x == '2' || x == '4')
-		{
-			continue;
-		}
-		else
-		{
-		_putchar(x + '0');
-		}
+		if (c != 50)
+	{
+		if (c != 52)
+	{
+			_putchar(c);
 	}
-	_putchar('\n');
+	}
+	}
+	 _putchar('\n');
 }
 
