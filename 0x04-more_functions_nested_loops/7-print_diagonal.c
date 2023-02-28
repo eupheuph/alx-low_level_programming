@@ -1,5 +1,4 @@
 #include "main.h"
-#include "_putchar.c"
 
 /**
  *print_diagonal - draws diagonal line on the terminal
