@@ -1,47 +1,26 @@
 #include "main.h"
-#include <string.h>
 
 /**
- * rot13 - Encodes a string using rot13.
- * @str: The string to be encoded.
+ * _strncpy - Copies at most an inputted number
+ *            of bytes from string src into dest.
+ * @dest: The buffer storing the string copy.
+ * @src: The source string.
+ * @n: The maximum number of bytes to copied from src.
  *
- * Return: A pointer to the encoded string.
+ * Return: A pointer to the resulting string dest.
  */
-char *rot13(char *str)
+char *_strncpy(char *dest, char *src, int n)
 {
-	int indx1 = 0, indx2;
-	char alphabet[52] = {'A', 'B', 'C', 'D', 'E', 'F',
-			     'G', 'H', 'I', 'J', 'K', 'L',
-			     'M', 'N', 'O', 'P', 'Q', 'R',
-			     'S', 'T', 'U', 'V', 'W', 'X',
-			     'Y', 'Z', 'a', 'b', 'c', 'd',
-			     'e', 'f', 'g', 'h', 'i', 'j',
-			     'k', 'l', 'm', 'n', 'o', 'p',
-			     'q', 'r', 's', 't', 'u', 'v',
-			     'w', 'x', 'y', 'z'};
-	char rot13key[52] = {'N', 'O', 'P', 'Q', 'R', 'S',
-			     'T', 'U', 'V', 'W', 'X', 'Y',
-			     'Z', 'A', 'B', 'C', 'D', 'E',
-			     'F', 'G', 'H', 'I', 'J', 'K',
-			     'L', 'M', 'n', 'o', 'p', 'q',
-			     'r', 's', 't', 'u', 'v', 'w',
-			     'x', 'y', 'z', 'a', 'b', 'c',
-			     'd', 'e', 'f', 'g', 'h', 'i',
-			     'j', 'k', 'l', 'm'};
+	int index = 0, src_len = 0;
 
-	while (str[indx1])
-	{
-		for (indx2 = 0; indx2 < 52; indx2++)
-		{
-			if (str[indx1] == alphabet[indx2])
-			{
-				str[indx1] = rot13key[indx2];
-				break;
-			}
-		}
+	while (src[index++])
+		src_len++;
 
-		indx1++;
+	for (index = 0; src[index] && index < n; index++)
+		dest[index] = src[index];
 
-	}
-	return (str);
+	for (index = src_len; index < n; index++)
+		dest[index] = '\0';
+
+	return (dest);
 }
