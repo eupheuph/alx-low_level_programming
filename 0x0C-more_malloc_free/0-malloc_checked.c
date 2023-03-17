@@ -1,31 +1,33 @@
 #include "main.h"
 #include <stdio.h>
 #include <stdlib.h>
-#include <limits.h>
 
 /**
- * main - check the code for ALX School students.
- *
- * Return: Always 0.
+ * malloc_checked - function declaration
+ * @b: integer to check
+ * Return: a pointer /  void
  */
-int main(void)
-{
-	char *c;
-	int *i;
-	float *f;
-	double *d;
 
-	c = malloc_checked(sizeof(char) * 1024);
-	printf("%p\n", (void *)c);
-	i = malloc_checked(sizeof(int) * 402);
-	printf("%p\n", (void *)i);
-	f = malloc_checked(sizeof(float) * 100000000);
-	printf("%p\n", (void *)f);
-	d = malloc_checked(INT_MAX);
-	printf("%p\n", (void *)d);
-	free(c);
-	free(i);
-	free(f);
-	free(d);
-	return (0);
+void *malloc_checked(unsigned int b);
+
+/**
+ * malloc_checked - function definition
+ * @b: the integer to check
+ * Description: returns pointer to allocated  memory
+ * if it fails, exit code 98
+ * Return: a pointer to allocated memory
+ */
+
+void *malloc_checked(unsigned int b)
+{
+
+	void *pointer;
+
+	pointer = malloc(b);
+	if (pointer == NULL)
+	{
+		exit(98);
+	}
+
+	return (pointer);
 }
