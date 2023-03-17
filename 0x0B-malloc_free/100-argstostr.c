@@ -7,7 +7,7 @@
  * @ac: no of args
  * @av: array of pointer
  * Return: char type
- */
+*/
 
 char *argstostr(int ac, char **av);
 
