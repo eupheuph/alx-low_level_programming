@@ -2,7 +2,8 @@
 #define SIZE 1024
 
 /**
- * defines macro with an abbreviation
+ *file: size 
+ *desc: defines macro with an abbreviation
  */
 
 #endif
